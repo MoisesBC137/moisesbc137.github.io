@@ -3,47 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio de Dados | Moisés Bwzerra</title>
+    <title>Moisés B. C. | Portfólio de Dados</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; }
-        header { background: #1f2937; color: white; text-align: center; padding: 2rem 1rem; }
-        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
-        .project-card { background: white; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 2rem; padding: 1.5rem; }
-        .project-title { color: #1f2937; margin-top: 0; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 4px; margin-top: 1rem; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .btn { display: inline-block; background: #2563eb; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; font-weight: bold; margin-top: 1rem; }
+        :root { --primary: #0f172a; --accent: #2563eb; --bg: #f8fafc; --text: #334155; }
+        body { font-family: system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.5; }
+        .hero { background: var(--primary); color: white; padding: 4rem 2rem; text-align: center; }
+        .hero h1 { margin: 0; font-size: 2.5rem; }
+        .hero p { color: #94a3b8; font-size: 1.2rem; margin: 0.5rem 0 1.5rem 0; }
+        .links-contato a { color: white; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; margin: 0 0.5rem; font-size: 0.9rem; transition: 0.3s; }
+        .links-contato a:hover { background: var(--accent); }
+        .section-title { text-align: center; margin: 3rem 0 1.5rem 0; font-size: 1.8rem; color: var(--primary); }
+        .skills-container { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+        .skill-badge { background: #e2e8f0; color: #475569; padding: 0.4rem 1rem; border-radius: 15px; font-weight: 500; font-size: 0.9rem; }
+        .grid { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        .card { background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); padding: 2rem; border: 1px solid #e2e8f0; }
+        .tag { background: #dbeafe; color: #1e40af; padding: 0.2rem 0.8rem; border-radius: 6px; font-size: 0.8rem; font-weight: bold; }
+        .embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; border-radius: 8px; margin: 1.5rem 0; }
+        .embed-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 0.6rem 1.2rem; text-decoration: none; border-radius: 6px; font-weight: 600; font-size: 0.9rem; }
         .btn:hover { background: #1d4ed8; }
     </style>
 </head>
 <body>
 
-    <header>
-       <h1>Moisés B. C.</h1>
-        <p>Cientista de Dados & Analista de BI</p>
-    </header>
+    <section class="hero">
+        <h1>Moisés B. C.</h1>
+        <p>Analista de Dados & Especialista em BI</p>
+        <div class="links-contato">
+            <a href="COLE_LINK_DO_SEU_LINKEDIN" target="_blank">LinkedIn</a>
+            <a href="mailto:seu-email@email.com">E-mail</a>
+        </div>
+    </section>
 
-    <div class="container">
+    <h2 class="section-title">Tecnologias & Ferramentas</h2>
+    <div class="skills-container">
+        <span class="skill-badge">SQL</span>
+        <span class="skill-badge">Power BI</span>
+        <span class="skill-badge">Looker Studio</span>
+        <span class="skill-badge">Excel Avançado</span>
+        <span class="skill-badge">Google Planilhas</span>
+    </div>
+
+    <h2 class="section-title">Projetos em Destaque</h2>
+    <div class="grid">
         
-        <!-- PROJETO 1: LOOKER STUDIO -->
-        <div class="project-card">
-            <h2 class="project-title">Projeto 1: Dashboard de Vendas no Looker Studio</h2>
-            <p>Análise de desempenho comercial utilizando dados integrados do Google Planilhas. Este relatório ajuda a identificar os produtos mais lucrativos e gargalos de logística.</p>
+        <!-- CARD DO PROJETO 1 -->
+        <div class="card">
+            <span class="tag">Looker Studio</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; color: #0f172a;">Dashboard de Análise Comercial de Vendas</h3>
+            <p>Relatório interativo focado no acompanhamento de KPIs de faturamento, ticket médio e performance por região. Dados integrados diretamente do Google Planilhas.</p>
             
-            <!-- Espaço do Dashboard Incorporado (Responsivo) -->
-            <div class="video-container">
-                <!-- COLE O IFRAME DO LOOKER STUDIO ABAIXO DESSE COMENTÁRIO -->
+            <div class="embed-container">
+                <!-- SUBSTITUA APENAS O LINK ABAIXO PELO SEU LINK DO LOOKER STUDIO -->
                 <iframe src="https://google.com" allowfullscreen></iframe>
             </div>
         </div>
 
-        <!-- PROJETO 2: POWER BI -->
-        <div class="project-card">
-            <h2 class="project-title">Projeto 2: Relatório Financeiro Corporativo</h2>
-            <p>Análise de DRE e fluxo de caixa desenvolvido no Power BI. Inclui cálculos avançados em DAX para projeção de cenários.</p>
-            
-            <!-- Botão para abrir em tela cheia (Melhor prática para celular) -->
-            <a href="COLE_O_LINK_DO_POWER_BI_AQUI" target="_blank" class="btn">Abrir Dashboard Interativo</a>
+        <!-- CARD DO PROJETO 2 -->
+        <div class="card">
+            <span class="tag">Power BI</span>
+            <h3 style="margin: 0.5rem 0 1rem 0; color: #0f172a;">Relatório de Desempenho Financeiro</h3>
+            <p>Análise detalhada de DRE corporativo e fluxo de caixa. Projeto focado na experiência do usuário (UX/UI) para tomada de decisão executiva rápido e intuitivo.</p>
+            <p style="font-size: 0.9rem; color: #64748b;">*Para uma melhor experiência no celular, clique no botão abaixo para abrir o relatório em tela cheia.</p>
+            <!-- SUBSTITUA O LINK ABAIXO PELO LINK PUBLICO DO SEU POWER BI -->
+            <a href="COLE_O_LINK_DO_POWER_BI_AQUI" target="_blank" class="btn">Visualizar Dashboard Interativo</a>
         </div>
 
     </div>
