@@ -35,12 +35,13 @@
         .hero p { color: #94a3b8; font-size: 1.3rem; margin: 0.5rem 0 2rem 0; font-weight: 400; }
         
         .links-contato a { 
+            display: inline-block;
             color: white; 
             background: rgba(255,255,255,0.08); 
             padding: 0.6rem 1.3rem; 
             border-radius: 50px; 
             text-decoration: none; 
-            margin: 0 0.5rem; 
+            margin: 0.5rem; 
             font-size: 0.95rem; 
             font-weight: 500;
             transition: all 0.3s ease; 
@@ -104,7 +105,7 @@
         /* Containers de Mídia (Imagens e Dashboards) */
         .media-container { 
             position: relative; 
-            padding-bottom: 56.25%; /* Proporção 16:9 */
+            padding-bottom: 56.25%; 
             height: 0; 
             overflow: hidden; 
             max-width: 100%; 
@@ -113,7 +114,7 @@
             margin: 1.5rem 0; 
             border: 1px solid #e2e8f0;
         }
-        .media-container iframe, .media-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+        .media-container iframe, .media-container img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; object-fit: contain; background: #f8fafc; }
 
         /* Botões de Ação */
         .button-group { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 1.5rem; }
@@ -138,7 +139,6 @@
 </head>
 <body>
 
-    <!-- CABEÇALHO DA LANDING PAGE -->
     <section class="hero">
         <h1>Moisés B. C.</h1>
         <p>Analista de Dados & Especialista em Business Intelligence</p>
@@ -150,7 +150,6 @@
 
     <div class="container">
         
-        <!-- SEÇÃO DE HABILIDADES -->
         <h2 class="section-title">Habilidades Técnicas</h2>
         <div class="skills-container">
             <span class="skill-badge">SQL</span>
@@ -161,7 +160,6 @@
             <span class="skill-badge">Modelagem de Dados</span>
         </div>
 
-        <!-- FILTROS INTERATIVOS (Módulos/Temas) -->
         <h2 class="section-title">Projetos Desenvolvidos</h2>
         <div class="filter-container">
             <button class="filter-btn active" onclick="filtrarProjetos('todos')">Todos os Projetos</button>
@@ -169,11 +167,9 @@
             <button class="filter-btn" onclick="filtrarProjetos('economia')">Economia</button>
             <button class="filter-btn" onclick="filtrarProjetos('financas')">Finanças</button>
         </div>
-
-        <!-- PORTFÓLIO GRID -->
         <div class="grid">
             
-            <!-- PROJETO 1: ADMINISTRAÇÃO / COMERCIAL -->
+            <!-- PROJETO 1: ADMINISTRAÇÃO -->
             <div class="card" data-categoria="administracao">
                 <div class="meta-tags">
                     <span class="tag">Administração</span>
@@ -183,16 +179,16 @@
                 <p>Relatório focado no acompanhamento de KPIs de faturamento corporativo, ticket médio e performance logística por região. Estrutura voltada para tomada de decisões rápidas em nível de gerência operacional.</p>
                 
                 <div class="media-container">
-                    <!-- Substitua o link abaixo pelo link de incorporação REAL do seu Looker Studio quando tiver pronto -->
+                    <!-- Link temporário do Looker Studio -->
                     <iframe src="https://google.com" allowfullscreen></iframe>
                 </div>
 
                 <div class="button-group">
-                    <a href="https://github.com/MoisesBC137/analise-vendas-lookerstudio/blob/main/README.md" target="_blank" class="btn">📄 Ver Documentação Técnica</a>
+                    <a href="https://github.com" target="_blank" class="btn">📄 Ver Documentação Técnica</a>
                 </div>
             </div>
 
-            <!-- PROJETO 2: FINANÇAS / ECONOMIA -->
+            <!-- PROJETO 2: FINANÇAS E ECONOMIA -->
             <div class="card" data-categoria="financas economia">
                 <div class="meta-tags">
                     <span class="tag">Finanças</span>
@@ -203,15 +199,45 @@
                 <p>Análise detalhada de Demonstrativo do Resultado do Exercício (DRE) e fluxo de caixa contínuo. Desenvolvimento focado em UI/UX para melhor absorção de métricas financeiras críticas por parte dos diretores executivos.</p>
                 
                 <div class="media-container">
-                    <!-- Imagem estática simulando o painel de BI antes do link definitivo estar pronto -->
-                    <img src="https://sfbplanilhas.com/wp-content/uploads/2023/03/DashGerencial-1-1024x576.png" alt="Preview do Dashboard Gerencial">
+                    <!-- Imagem enviada do painel configurada corretamente -->
+                    <img src="https://sfbplanilhas.com" alt="Preview do Dashboard Gerencial">
                 </div>
 
                 <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0;">*Para interagir com os filtros e navegar pelas abas do relatório financeiro, clique no botão interativo abaixo.</p>
 
                 <div class="button-group">
-                    <a href="https://github.com/MoisesBC137/analise-vendas-lookerstudio/blob/main/README.md" target="_blank" class="btn btn-secondary">📄 Ver Documentação Técnica</a>
+                    <a href="https://github.com" target="_blank" class="btn btn-secondary">📄 Ver Documentação Técnica</a>
                     <a href="COLE_O_LINK_DO_POWER_BI_AQUI" target="_blank" class="btn">📊 Abrir Painel Interativo</a>
                 </div>
             </div>
 
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Moisés B. C. • Desenvolvido com GitHub Pages</p>
+    </footer>
+
+    <script>
+        function filtrarProjetos(categoria) {
+            const botoes = document.querySelectorAll('.filter-btn');
+            botoes.forEach(btn => btn.classList.remove('active'));
+            
+            if(event && event.target) {
+                event.target.classList.add('active');
+            }
+
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const categoriasCard = card.getAttribute('data-categoria').split(' ');
+                if (categoria === 'todos' || categoriasCard.includes(categoria)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
